@@ -95,7 +95,7 @@ a:hover { color: #388E3C; }
 
 /* --- HERO BANNER --- */
 .hero-banner {
-    background-image: url('banner-dog.jpg');
+    background-image: url(img/BANNER-DIA-DE-DOAR-2048x665.png);
     background-size: cover;
     background-position: center;
     min-height: 500px;
