@@ -5,37 +5,37 @@ body {
     color: #444;
     margin: 0;
     line-height: 1.6;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 
 h1, h2 { font-weight: 700; color: #388E3C; }
 a { text-decoration: none; color: #4CAF50; }
 a:hover { color: #388E3C; }
 
-/* --- NAV BAR FIXA OTIMIZADA --- */
+/* --- NAV BAR FIXA --- */
 .main-nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: #ffffff; /* Fundo branco puro */
-    /* Sombra mais suave para um visual moderno */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: background-color 0.3s ease;
 }
 
 .nav-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 18px 25px; /* Mais padding vertical e horizontal */
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo a {
-    font-size: 1.8em; /* Tamanho um pouco maior */
-    font-weight: 800; /* Mais destaque para o nome da instituição */
-    color: #ff9900; /* Azul vibrante (cor de inclusão/confiança) */
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #ff9900;
     text-transform: uppercase;
     letter-spacing: -0.5px;
     transition: color 0.3s;
@@ -48,20 +48,19 @@ a:hover { color: #388E3C; }
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Mais espaço entre os links */
+    gap: 30px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-    font-weight: 600; 
-    color: #444; 
-    padding: 10px 13;
-    transition: color 0.2s;
+    font-weight: 600;
+    color: #444;
+    padding: 10px 13px;
     position: relative;
 }
 
-/* Efeito de sublinhado animado nos links */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -69,7 +68,7 @@ a:hover { color: #388E3C; }
     height: 3px;
     bottom: -5px;
     left: 0;
-    background-color: #4CAF50; /* Cor de destaque (Verde) */
+    background-color: #4CAF50;
     transition: width 0.3s ease-out;
 }
 
@@ -77,58 +76,29 @@ a:hover { color: #388E3C; }
     width: 100%;
 }
 
-/* Estilo do Botão Call-to-Action (DOAR AGORA) */
 .cta-nav-link {
-    background-color: #636363; /* Vermelho-alerta ou Coral, muito chamativo para Doação */
+    background-color: #636363;
     color: white !important;
-    padding: 20px 20px; 
-    border-radius: 8px; 
-    font-weight: 800; /* Super Negrito */
+    padding: 20px 20px;
+    border-radius: 8px;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    /* Sombra mais pronunciada e com cor para efeito 3D sutil */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
     transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-/* Remove o sublinhado do link CTA */
-.cta-nav-link::after {
-    display: none; 
-}
-
-.cta-nav-link:hover {
-    background-color: #000000; /* Escurece um pouco ao passar o mouse */
-    transform: translateY(-2px); /* Efeito de elevação mais perceptível */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
-}
-
-/* --- Responsividade Básica --- */
-@media (max-width: 768px) {
-    .nav-content {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-    .nav-links {
-        margin-top: 10px;
-        gap: 15px;
-    }
-    .logo a {
-        font-size: 1.4em;
-    }
-    .cta-nav-link {
-        /* Garante que o CTA não fique muito espremido */
-        padding: 8px 15px; 
-    }
-}
+.cta-nav-link::after { display: none; }
 
 .cta-nav-link:hover {
     background-color: #FB8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.8);
 }
 
-/* --- 1. BANNER HERO --- */
+/* --- HERO BANNER --- */
 .hero-banner {
-    /* SUBSTITUA 'banner-dog.jpg' PELA SUA IMAGEM */
-    background-image: url('banner-dog.jpg'); 
+    background-image: url('banner-dog.jpg');
     background-size: cover;
     background-position: center;
     min-height: 500px;
@@ -144,11 +114,8 @@ a:hover { color: #388E3C; }
 .hero-banner::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
 }
 
 .hero-content {
@@ -156,19 +123,11 @@ a:hover { color: #388E3C; }
     max-width: 800px;
 }
 
-.pre-headline {
-    color: #FFEB3B; 
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
 .hero-content h1 {
     font-size: 3.5em;
     margin: 0 0 20px;
     color: white;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
 }
 
 .hero-cta-button {
@@ -191,42 +150,36 @@ a:hover { color: #388E3C; }
 /* --- SEÇÕES DE CONTEÚDO --- */
 .content-section {
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* 2. MISSÃO E APELO */
+/* --- MISSÃO / APELO --- */
 .story-appeal {
     display: flex;
     gap: 40px;
     align-items: center;
     padding: 60px 0;
+    flex-wrap: wrap;
 }
 
-.appeal-text {
-    flex: 1;
-}
-
-.appeal-photo {
-    flex: 1;
-    text-align: right;
+.appeal-text, .appeal-photo {
+    flex: 1 1 300px;
 }
 
 .story-img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.lead-text {
-    font-size: 1.15em;
-    margin-bottom: 20px;
-}
+.lead-text { font-size: 1.15em; margin-bottom: 20px; }
 
 .benefit-list {
     list-style: none;
     padding: 0;
+    margin-bottom: 20px;
 }
 
 .benefit-list li {
@@ -235,7 +188,6 @@ a:hover { color: #388E3C; }
 }
 
 .text-cta-button {
-    margin-top: 20px;
     display: inline-block;
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -243,13 +195,11 @@ a:hover { color: #388E3C; }
     border-radius: 5px;
 }
 
-.text-cta-button:hover {
-    background-color: #21550c;
-}
+.text-cta-button:hover { background-color: #21550c; }
 
-/* 3. SEÇÃO DE IMPACTO */
+/* --- IMPACTO --- */
 .impact-section {
-    background-color: #e8f5e9; 
+    background-color: #e8f5e9;
     padding: 60px 20px;
     text-align: center;
     border-radius: 10px;
@@ -258,6 +208,7 @@ a:hover { color: #388E3C; }
 
 .impact-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
     margin-top: 30px;
@@ -267,16 +218,12 @@ a:hover { color: #388E3C; }
     background-color: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    flex: 1;
-    min-width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    flex: 1 1 250px;
+    text-align: center;
 }
 
-.impact-cards i {
-    font-size: 2.5em;
-    color: #FF9800;
-    margin-bottom: 15px;
-}
+.impact-cards i { font-size: 2.5em; color: #FF9800; margin-bottom: 15px; }
 
 .progress-bar-container {
     background-color: #ddd;
@@ -297,41 +244,31 @@ a:hover { color: #388E3C; }
     transition: width 1s ease-in-out;
 }
 
-/* 4. SEÇÃO DE PROVA SOCIAL (TESTEMUNHOS) */
+/* --- TESTEMUNHOS --- */
 .testimonials-section {
     padding: 60px 20px;
     text-align: center;
     background-color: #f0fff0;
 }
 
-.testimonials-section h2 {
-    color: #388E3C;
-    margin-bottom: 40px;
-}
-
 .testimonial-card-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .testimonial-card {
     background-color: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 300px;
-    border-left: 5px solid #FF9800; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    border-left: 5px solid #FF9800;
     text-align: left;
 }
 
-.author-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
+.author-info { display: flex; align-items: center; margin-bottom: 15px; }
 
 .profile-pic {
     width: 60px;
@@ -342,29 +279,15 @@ a:hover { color: #388E3C; }
     border: 3px solid #4CAF50;
 }
 
-.author-name {
-    font-weight: bold;
-    color: #444;
-    margin: 0;
-    font-size: 1.1em;
-}
+.author-name { font-weight: bold; font-size: 1.1em; margin: 0; color: #444; }
 
-.rating {
-    color: gold; 
-    font-size: 0.9em;
-}
+.rating { color: gold; font-size: 0.9em; }
 
-.review-text {
-    font-style: italic;
-    color: #555;
-    margin-top: 0;
-}
+.review-text { font-style: italic; color: #555; margin-top: 0; }
 
-.review-cta {
-    margin-top: 40px;
-}
+.review-cta { margin-top: 40px; }
 
-/* 5. SEÇÃO DE DOAÇÃO */
+/* --- DOAÇÃO --- */
 .donation-area {
     padding: 60px 20px;
     background-color: #fff;
@@ -376,73 +299,57 @@ a:hover { color: #388E3C; }
     margin: 0 auto;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     text-align: center;
     border-top: 5px solid #FF9800;
 }
 
-.donation-container h2 {
-    color: #FF9800;
-    margin-top: 0;
-}
+.donation-container h2 { color: #FF9800; margin-top: 0; }
 
 .fixed-amounts {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 25px;
 }
 
-/* ESTILOS DOS BOTÕES FIXOS (agora links: .amount-btn e .button-link)
-*/
-.fixed-amounts .amount-btn.button-link {
-    /* Estilos de fundo e borda mantidos do antigo 'button' */
+.amount-btn.button-link {
     background-color: #f0f0f0;
-    color: #555 !important; /* Garante que a cor do link seja cinza */
-    text-decoration: none; /* Remove sublinhado */
+    color: #555 !important;
+    text-decoration: none;
     border: 2px solid #ddd;
-    
-    /* Configuração de layout para parecer um botão em bloco */
-    display: block; 
+    display: block;
     text-align: center;
     padding: 15px 10px;
-    
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.1em;
     transition: all 0.2s;
 }
 
-.fixed-amounts .amount-btn.button-link:hover {
+.amount-btn.button-link:hover {
     border-color: #4CAF50;
     background-color: #e8f5e9;
     color: #333 !important;
 }
 
-/* ESTILOS DO BOTÃO PRINCIPAL (agora link: #proceed-button-static)
-*/
-
 #proceed-button-static {
-    /* Estilos de fundo e cor de texto */
     width: 100%;
     padding: 15px;
     background-color: #FF9800;
-    color: white !important; /* Garante que a cor do texto do link seja branca */
-    
-    /* Configuração de layout para parecer um botão em bloco */
+    color: white !important;
     display: block;
     text-align: center;
     text-decoration: none;
-    
     border: none;
     border-radius: 8px;
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin-top: 30px; /* Adicionado margem para separação */
+    margin-top: 30px;
 }
 
-/* --- 6. RODAPÉ --- */
+/* --- RODAPÉ --- */
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -457,6 +364,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .social-links a {
@@ -466,31 +374,29 @@ footer {
     transition: color 0.2s;
 }
 
-.social-links a:hover {
-    color: #4CAF50;
-}
+.social-links a:hover { color: #4CAF50; }
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 992px) {
-    /* Layouts de 2 e 3 colunas viram 1 coluna */
-    .story-appeal, .impact-cards, .testimonial-card-container {
-        flex-direction: column;
-    }
+    .hero-content h1 { font-size: 2.5em; }
+    .hero-banner { min-height: 400px; }
+    .story-appeal, .impact-cards, .testimonial-card-container { flex-direction: column; }
+    .appeal-photo { text-align: center; }
+    .footer-content { flex-direction: column; gap: 15px; }
+}
 
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
+@media (max-width: 768px) {
+    .nav-content { flex-direction: column; padding: 15px 20px; }
+    .nav-links { margin-top: 10px; gap: 15px; }
+    .logo a { font-size: 1.4em; }
+    .cta-nav-link { padding: 8px 15px; }
+    .hero-content h1 { font-size: 1.8em; }
+    .hero-cta-button { padding: 12px 20px; font-size: 1em; }
+}
 
-    .hero-banner {
-        min-height: 400px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .appeal-photo {
-        text-align: center;
-    }
+@media (max-width: 480px) {
+    .fixed-amounts { grid-template-columns: 1fr; }
+    .footer-content { text-align: center; gap: 10px; }
+    .social-links a { margin: 5px; }
+    .hero-content h1 { font-size: 1.5em; }
 }
