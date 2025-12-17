@@ -1,8 +1,9 @@
 :root {
-  --primaria: #4f46e5;
-  --secundaria: #22c55e;
-  --fundo: #f8fafc;
-  --texto: #1f2933;
+  --primaria: #1e3a8a;   /* azul escuro moderno */
+  --secundaria: #22c55e; /* verde para destaques */
+  --fundo: #f8fafc;      /* fundo claro */
+  --texto: #1f2933;      /* texto escuro */
+  --cinza: #e5e7eb;      /* cinza suave */
 }
 
 * {
@@ -20,31 +21,36 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* gradiente azul escuro */
   color: white;
   padding: 80px 20px;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-.hero-content {
-  max-width: 600px;
-  margin: auto;
-}
-
-.tag {
-  background: #22c55e;
+.hero .tag {
+  background: rgba(255,255,255,0.15);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
-  margin: 20px 0;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white;
 }
 
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta {
@@ -55,6 +61,12 @@ body {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.cta:hover {
+  background: #16a34a;
+  transform: translateY(-3px);
 }
 
 /* IMPACTO */
@@ -64,12 +76,22 @@ body {
   text-align: center;
   padding: 40px 20px;
   background: white;
+  border-radius: 20px;
+  margin-top: -40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .impacto-item strong {
   font-size: 1.6rem;
   display: block;
   color: var(--primaria);
+}
+
+.impacto-item span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 500;
+  color: #555;
 }
 
 /* SEÇÕES */
@@ -82,14 +104,16 @@ section {
 section h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--primaria);
 }
 
 /* DOAÇÕES */
 .valores {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+  gap: 20px;
   margin-top: 30px;
 }
 
@@ -100,8 +124,13 @@ section h2 {
   text-align: center;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.valor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .valor span {
@@ -116,26 +145,15 @@ section h2 {
   color: #555;
 }
 
-/* EFEITOS AO PASSAR O MOUSE */
-.valor:hover {
-  transform: translateY(-5px); /* levanta o botão */
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* sombra mais forte */
-  border-color: var(--primaria); /* muda a borda */
-}
-
-/* Para destaque, mantém a cor secundária ao passar o mouse */
-.valor.destaque:hover {
-  border-color: var(--secundaria);
-}
-
-/* Ajuste de cores do texto se quiser que fique mais chamativo */
-.valor:hover span {
-  color: var(--secundaria);
+.valor.destaque {
+  border: 2px solid var(--secundaria);
 }
 
 /* DEPOIMENTOS */
 .depoimentos {
   background: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .lista-depoimentos {
@@ -147,7 +165,13 @@ section h2 {
 .depoimento {
   background: var(--fundo);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.depoimento:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
 }
 
 .depoimento span {
@@ -163,9 +187,11 @@ section h2 {
   text-align: center;
   padding: 30px 15px;
   font-size: 0.9rem;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
-/* MOBILE AJUSTES */
+/* MOBILE */
 @media (max-width: 600px) {
   .impacto {
     flex-direction: column;
@@ -173,6 +199,10 @@ section h2 {
   }
 
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
+  }
+
+  .valores {
+    grid-template-columns: 1fr 1fr;
   }
 }
